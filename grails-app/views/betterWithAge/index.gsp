@@ -8,7 +8,7 @@
             <p>Makes <a href="http://www.shoeboxed.com/"><b>Shoeboxed</b></a>
             even better by finding the <i>ages of your biz contacts</i>.</p>
             <p><font size="-1">This app is running on open source software:</font></p>
-            <form>
+            <form method="post">
                 <g:set var="grailsImage" value="${resource(dir:'images', file:'grails_logo.jpg')}"></g:set>
                 <a href="http://grails.org"><img src="${grailsImage}" border="0"/></a>
                 <table>
