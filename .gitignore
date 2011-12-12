@@ -13,6 +13,7 @@ config/findbugs/
 config/pmd/
 data/
 dist/
+prodDb.*
 target/
 target-eclipse/
 test-output/
