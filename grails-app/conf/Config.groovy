@@ -57,6 +57,11 @@ shoeboxed.apiPath = "v1/ws/api.htm"
 shoeboxed.apiUserName = "xxx" // TODO fill in your creds
 shoeboxed.apiUserToken = "xxx" // TODO fill in your creds
 
+// Rapleaf
+rapleaf.apiURL = 'https://personalize.rapleaf.com'
+rapleaf.apiPath = 'v4/bulk'
+rapleaf.apiKey = 'xxx' // TODO fill in your creds
+
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {

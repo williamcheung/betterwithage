@@ -24,12 +24,14 @@ class BusinessContact {
     String note
 
     String ageRange
+    Gender gender
 
     static constraints = {
         // list properties in desired display order
         firstName(nullable: true)
         lastName(nullable: true)
         ageRange(nullable: true)
+        gender(nullable: true)
         email(nullable: true)
         cellPhone(nullable: true)
         address(nullable: true)

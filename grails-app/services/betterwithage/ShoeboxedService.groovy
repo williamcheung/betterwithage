@@ -8,11 +8,9 @@ import org.codehaus.groovy.grails.commons.ConfigurationHolder
 
 class ShoeboxedService {
 
-    static transactional = true
-
     private static final PAGE_SIZE = 200
 
-    def importContacts(email, password) {
+    def getContacts(email, password) {
         def userToken = login(email, password)
 
         def contacts = []
@@ -25,13 +23,7 @@ class ShoeboxedService {
 
             responseXml.BusinessCards.BusinessCard.each { card ->
                 def contact = buildBusinessContact(card)
-
-                def existingContact = BusinessContact.findByExternalId(contact.externalId)
-                if (existingContact) {
-                    existingContact.properties = contact.properties
-                    contact = existingContact
-                }
-                contacts << contact.save(failOnError: true)
+                contacts << contact
             }
 
             def total = "${responseXml.BusinessCards.@count}" as int
@@ -113,6 +105,7 @@ class ShoeboxedService {
                 body: "xml=${request}",
                 requestContentType: groovyx.net.http.ContentType.URLENC)
 
+            assert response.status == 200
             assert response.headers."Content-Type".startsWith('text/xml')
             def responseXml = response.data
 
