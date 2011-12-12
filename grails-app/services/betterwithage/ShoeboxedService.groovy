@@ -10,7 +10,7 @@ class ShoeboxedService {
 
     static transactional = true
 
-    private static final PAGE_SIZE = 50
+    private static final PAGE_SIZE = 200
 
     def importContacts(email, password) {
         def userToken = login(email, password)
@@ -31,11 +31,11 @@ class ShoeboxedService {
                     existingContact.properties = contact.properties
                     contact = existingContact
                 }
-                contacts << contact.save(flush: true, failOnError: true)
+                contacts << contact.save(failOnError: true)
             }
 
-            def count = "${responseXml.BusinessCards.@count}" as int
-            if (count < PAGE_SIZE)
+            def total = "${responseXml.BusinessCards.@count}" as int
+            if (contacts.size == total)
                 more = false
         }
 
