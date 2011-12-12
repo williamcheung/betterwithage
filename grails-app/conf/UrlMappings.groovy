@@ -7,7 +7,7 @@ class UrlMappings {
 			}
 		}
 
-		"/"(view:"/index")
+		"/"(controller:'betterWithAge')
 		"500"(view:'/error')
 	}
 }
