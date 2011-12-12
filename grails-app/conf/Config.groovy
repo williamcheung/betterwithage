@@ -51,6 +51,12 @@ grails.spring.bean.packages = []
 // request parameters to mask when logging exceptions
 grails.exceptionresolver.params.exclude = ['password']
 
+// Shoeboxed
+shoeboxed.apiURL = "https://api.shoeboxed.com"
+shoeboxed.apiPath = "v1/ws/api.htm"
+shoeboxed.apiUserName = "xxx" // TODO fill in your creds
+shoeboxed.apiUserToken = "xxx" // TODO fill in your creds
+
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {

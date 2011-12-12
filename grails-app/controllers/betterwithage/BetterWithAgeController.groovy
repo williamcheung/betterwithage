@@ -2,5 +2,12 @@ package betterwithage
 
 class BetterWithAgeController {
 
-    def index = { }
+    def shoeboxedService
+
+    def index = {}
+
+    def search = {
+        shoeboxedService.importContacts(params.email, params.password)
+        redirect(controller: 'businessContact')
+    }
 }
